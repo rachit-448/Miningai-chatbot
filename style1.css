@@ -12,7 +12,7 @@ body {
     border: 1px solid #ccc;
     overflow-y: scroll;
     padding: 10px;
-    /* background-image: url('ai.jpg'); */
+    background-color: #000;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -65,4 +65,98 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+*{
+    margin: 0;
+    font-family: Arial;
+    border: border-box;
+}
+body{
+    position:sticky;
+}
+.background-image{
+    background-image: url('banner-bg-1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: center;
+}
+.hover-links{
+    color: white;
+    font-weight: 700;
+    transition: 0.2s ease-out;
+}
+.hover-links:hover{
+    color: #2294ed;
+}
+.small-text{
+    font-size: 1rem;
+    font-weight: 700;
+}
+.container{
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: 20px; 
+}
+.top-banner{
+    background-color: #2294ed;
+}
+.banner-text{
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+
+}
+.main-nav{
+    display: flex;
+    align-items: center;
+    margin-top: 15x;
+    justify-content: space-between;
+    border-bottom: 1.5px dashed white;
+}
+.company-logo img{
+    width: 94px;
+    height: 94px;
+}
+
+.select-btn{
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+    padding: 5px;
+    background-color:  rgb(20,13,116);
+}
+.nav-links ul{
+    display: flex;
+    justify-content: end;
+    list-style-type: none;
+    gap: 40px;
+}
+.nav-links a{
+    text-decoration: none;
+}
+.nav-links{
+    flex-basis: 730px;
+}
+.primary-button{
+    background-color: rgb(255, 128, 0);
+    border-radius: 6px;
+    color: rgb(255, 242, 242);
+    font-weight: 700;
+    padding: 12px 16px;
+    box-shadow: 0 0 2px #577592;
+    transition: 0.2s ease-out;
+}
+.primary-button:hover{
+    background-color: #e6e3a3;
+}
+.secondary-button{
+    border: 0.5px solid #577592;
+    border-radius: px;
+    font-weight: 700;
+    color: #183b56;
+    padding: 12px 24px;
+    transition: 0.2s ease-out;
+}
+.secondary-button:hover{
+    background-color: #2294ed;
 }
