@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Window</title>
+    <link rel="stylesheet" href="style1.css"> 
+</head>
+
+<body onload="displayInitialMessage()">
+    <div id="chat-container"></div>
+    <div class="input-wrapper">
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("message-input").value;
+            displayMessage("You: " + message);
+            document.getElementById("message-input").value = "";
+
+            // Send message to Flask backend
+            fetch("/process_message", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    message: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                var response = data.response;
+                displayMessage("Stark: " + response);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        function displayMessage(message) {
+            var chatContainer = document.getElementById("chat-container");
+            var messageElement = document.createElement("div");
+            messageElement.textContent = message;
+            messageElement.classList.add("message");
+            chatContainer.appendChild(messageElement);
+            chatContainer.scrollTop = chatContainer.scrollHeight; // Scroll to bottom
+        }
+
+        function displayInitialMessage() {
+            displayMessage("Hi! Please type your query below:");
+        }
+    </script>
+</body>
+
+</html>
