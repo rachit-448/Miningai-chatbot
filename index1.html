@@ -9,6 +9,29 @@
 </head>
 
 <body onload="displayInitialMessage()">
+    <div class="container main-nav">
+        <a href="Auction.html" class="company-logo">
+            <img src="LOOGO-removebg-preview.png" alt="company_logo">
+        </a>
+
+        <div class="nav-links">
+            <ul style="color: white;">
+                <li><a href="#" class="hover-links">
+                        <select class="select-btn">
+                            <option value="Pages"><button class="language-btn">Home <img
+                                        src="C:\Users\parit\OneDrive\Documents\Desktop\Project2\down-icon.png"
+                                        alt="down"></button></option>
+                            
+                            <option value="Pages">Contact</option>
+                            <option value="Pages">FaQs</option>
+                        </select></a></li>
+                
+                <li><a href="#" class="hover-links">Products</a></li>
+                <li><a href="#" class="hover-links">Resources</a></li>
+                <li><a href="login.html" class="hover-links primary-button">Sign In/Up </a></li>
+            </ul>
+        </div>
+    </div>
     <div id="chat-container"></div>
     <div class="input-wrapper">
         <input type="text" id="message-input" placeholder="Type your message...">
@@ -21,7 +44,6 @@
             displayMessage("You: " + message);
             document.getElementById("message-input").value = "";
 
-            // Send message to Flask backend
             fetch("/process_message", {
                 method: "POST",
                 headers: {
